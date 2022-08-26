@@ -15,8 +15,8 @@
 	sqlHost = "127.0.0.1"
 	sqlPort = 3306
 	sqlUser = "root"
-	sqlPass = "Jy1Y3NqUQaH5LvaJ"
-	sqlDatabase = "servidor"
+	sqlPass = "1230891247123091278123891230129"
+	sqlDatabase = "ot"
 	sqlFile = ""
 	sqlKeepAlive = 0
 	mysqlReadTimeout = 10
@@ -26,7 +26,7 @@
 
 	-- World / Ip / Port
 	worldId = 0
-	ip = "177.128.181.79"
+	ip = "44.209.124.60"
 	worldType = "open"
 	bindOnlyGlobalAddress = false
 	loginPort = 7171
