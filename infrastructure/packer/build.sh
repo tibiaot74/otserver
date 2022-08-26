@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
+sudo apt install git -y
 
 ### Docker Installation
 sudo apt-get install \
