@@ -26,7 +26,7 @@
 
 	-- World / Ip / Port
 	worldId = 0
-	ip = "44.209.124.60"
+	ip = "lipyt.ddns.net"
 	worldType = "open"
 	bindOnlyGlobalAddress = false
 	loginPort = 7171
