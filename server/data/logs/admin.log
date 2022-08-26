@@ -1,0 +1,5 @@
+[1/8/2016 3:11:25] (Error - void ServicePort::open(IPAddressList, uint16_t)) NETWORK: bind: Address already in use
+[2/8/2016 6:1:19] (Error - void ServicePort::open(IPAddressList, uint16_t)) NETWORK: bind: Address already in use
+[2/8/2016 16:7:55] (Error - void ServicePort::open(IPAddressList, uint16_t)) NETWORK: bind: Address already in use
+[2/8/2016 16:25:11] (Error - void ServicePort::open(IPAddressList, uint16_t)) NETWORK: bind: Address already in use
+[6/8/2016 15:54:35] (Error - void ServicePort::open(IPAddressList, uint16_t)) NETWORK: bind: Address already in use

@@ -1,0 +1,11 @@
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="Sand dragon activity near Darashia reported! Beware!" />
+  <announce delay="5000" type="Event" message="Tony swear he saw a few sand dragons north of Darashia!" />
+  <announce delay="60000" type="Event" message="Darashia is under attack! Send help!" />
+  <!--Single Spawns-->
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="33214" fromy="32371" fromz="7" tox="33286" toy="32437" toz="7">
+    <monster name="Sand dragon" amount="30" />
+  </areaspawn>
+</raid>

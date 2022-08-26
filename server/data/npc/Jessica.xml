@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Jessica" script="bank.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="140" head="114" body="16" legs="1" feet="33" addons="1"/>
+<voices>
+<voice text="Leave your money with me where it's safe!" interval2="100" margin="1" yell="no"/>
+<voice text="Gems, jewels... all a woman could dream of is right here." interval2="120" margin="1" yell="no"/>
+</voices>
+<parameters>
+		<parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;jewel;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+		 <parameter key="keyword_reply2" value="Currently you can purchase wedding rings, golden amulets, and ruby necklaces. We also buy gold ingots." />
+       <parameter key="message_greet" value="Greetings stranger. Let me know if you want to {trade} gems or jewellery. I am also the local {bank} contact."/>
+        <parameter key="message_farewell" value="May enlightenment be your path, |PLAYERNAME|."/>
+		<parameter key="message_walkaway" value="Good bye." />
+		<parameter key="message_sendtrade" value="Here, take a look." />
+</parameters>
+</npc>

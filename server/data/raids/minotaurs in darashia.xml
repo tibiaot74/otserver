@@ -1,0 +1,12 @@
+<raid>
+  <announce delay="1000" type="Event" message="Minotaurs are getting restless in Darashia.." />
+  <announce delay="60000" type="Event" message="Darashia is under attack!" />
+  
+  <areaspawn delay="60000" fromx="33211" fromy="32366" fromz="7" tox="33285" toy="32429" toz="7">
+    <monster name="Minotaur(raid)" amount="200" />
+	<monster name="Minotaur Archer(raid)" amount="50" />
+	<monster name="Minotaur Mage(raid)" amount="10" />
+	<monster name="Minotaur Guard(raid)" amount="30" />
+  </areaspawn>
+
+</raid>

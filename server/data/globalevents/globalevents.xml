@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<globalevents>
+	<!-- Server Events -->
+	<globalevent name="init" type="startup" event="script" value="init.lua"/>
+	<globalevent name="globalsave" type="globalsave" event="script" value="init.lua"/>
+	<globalevent name="record" type="record" event="script" value="record.lua"/>
+	<globalevent name="GlobalSave" time="05:55" event="script" value="GlobalSave.lua"/>
+	<globalevent name="shop" interval="30000" script="shop.lua"/>
+	<globalevent name="Mensagem" interval="900000" script="msg.lua"/>
+	<globalevent name="Save" interval="3600000" script="save.lua"/>
+	<!-- <globalevent name="rashid" type="startup" event="script" value="rashid.lua"/> -->
+</globalevents>

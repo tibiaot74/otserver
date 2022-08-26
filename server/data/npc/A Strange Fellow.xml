@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="A Strange Fellow" script="fellow.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="128" head="76" body="43" legs="38" feet="76" addons="2"/>
+<parameters>
+<parameter key="message_greet" value="Uh? What do you want?! " />
+</parameters>
+</npc>
+

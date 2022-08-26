@@ -1,0 +1,10 @@
+
+<npc name="Markwin" script="Markwin.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look type="23" />
+    <parameters>
+        
+        <parameter key="message_greet" value="Welcome to the Jolly Axeman, |PLAYERNAME|. Have a good time and eat some food!"/>
+		<parameter key="message_farewell" value="Yeah, bye."/>
+    </parameters>  
+</npc>

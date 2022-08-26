@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Kevin" script="Kevin.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="128" head="76" body="43" legs="38" feet="76" addons="0"/>
+	<parameters>
+<parameter key="message_greet" value="Greetings |PLAYERNAME|, what brings you to the headquarter of the postmaster's guild?"/>
+	</parameters>
+</npc>
+ 

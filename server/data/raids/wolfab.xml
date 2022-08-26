@@ -1,0 +1,12 @@
+<raid>
+<announce delay="1000" type="event" message="Many aggressive beasts are roaming south of Ab'Dendriel! Take care!" />
+
+  <!--Area Spawns-->
+  <areaspawn delay="1000" fromx="32617" fromy="31713" fromz="7" tox="32657" toy="31736" toz="7">
+    <monster name="war wolf(raid)" amount="30" />
+    <monster name="wolf(raid)" amount="100" />
+  </areaspawn>
+ 
+
+
+</raid>

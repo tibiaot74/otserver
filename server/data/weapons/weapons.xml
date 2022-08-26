@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<weapons>
+	<distance id="2545" script="paladin/poison arrow.lua"/>
+	<distance id="2546" script="paladin/explosive arrow.lua"/>
+	
+		<!-- Bows and Crossbows -->
+		<!-- Crossbow -->
+		<distance id="2455" event="function" value="default"/>
+		<!-- Bow -->
+		<distance id="2456" event="function" value="default"/>
+		<!-- Arbalest -->
+		<distance id="5519" event="function" value="default"/>
+		
+	<!-- Ammunition -->
+		<!-- Small Stone -->
+		<distance id="1294" event="function" value="default"/>
+		<!-- Snow Ball -->
+		<distance id="2111" event="function" value="default"/>
+		<!-- Spear -->
+		<distance id="2389" event="function" value="default"/>
+		<!-- Throwing Star -->
+		<distance id="2399" event="function" value="default"/>
+		<!-- Throwing Knife -->
+		<distance id="2410" event="function" value="default"/>
+		<!-- Bolt -->
+		<distance id="2543" event="function" value="default"/>
+		<!-- Arrow -->
+		<distance id="2544" event="function" value="default"/>
+		<!-- Power Bolt -->
+		<distance id="2547" event="function" value="default"/>
+		<!-- Hunting Spear -->
+</weapons>

@@ -1,0 +1,21 @@
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="Something are weird in Thais..  so quiet.." />
+  <announce delay="60000" type="Event" message="Help! Thieves is striking against Thais!" />
+    <announce delay="120000" type="Event" message="Help! more thieves is coming!" />
+  <!--Single Spawns-->
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="32304" fromy="32168" fromz="7" tox="32426" toy="32263" toz="7">
+    <monster name="Thief" amount="80" />
+  </areaspawn>
+
+  <areaspawn delay="120000" fromx="32304" fromy="32168" fromz="7" tox="32426" toy="32263" toz="7">
+    <monster name="Thief" amount="80" />
+  </areaspawn>
+  <areaspawn delay="130000" fromx="32304" fromy="32168" fromz="7" tox="32426" toy="32263" toz="7">
+    <monster name="Thief" amount="80" />
+  </areaspawn>
+  <areaspawn delay="140000" fromx="32304" fromy="32168" fromz="7" tox="32426" toy="32263" toz="7">
+    <monster name="Thief" amount="80" />
+  </areaspawn>  
+</raid>
