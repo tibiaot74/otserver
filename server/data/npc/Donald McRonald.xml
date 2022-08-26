@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Task Manager" script="task.lua" walkinterval="0" floorchange="0">
+<health now="100" max="100"/>
+<look type="128" head="41" body="94" legs="79" feet="76" addons="0"/>
+<parameters>
+<parameter key="message_greet" value="Hello |PLAYERNAME|. want to do a {task}? or {leave}? can also {reward} she ended up awards!" />
+</parameters>
+</npc>

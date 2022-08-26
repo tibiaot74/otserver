@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Blightwalker" nameDescription="a blightwalker" race="undead" experience="5850" speed="240" manacost="0">
+	<health now="8900" max="8900"/>
+	<look type="242" corpse="5523"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="88" attack="100"/>
+		<attack name="physical" interval="1500" chance="34" range="7" min="-105" max="-155">
+			<attribute key="shootEffect" value="smallstone"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="25" range="7" min="-140" max="-220">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</attack>
+	</attacks>
+	<defenses armor="15" defense="15">
+		<defense name="healing" interval="1000" chance="50" min="75" max="125">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element earthPercent="100"/>
+		<element deathPercent="100"/>
+		<element firePercent="50"/>
+		<element energyPercent="20"/>
+		<element icePercent="50"/>
+		<element physicalPercent="-10"/>
+		<element holyPercent="-30"/>
+	</elements>
+	<immunities>
+		<immunity paralyze="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="I can see you decaying!"/>
+		<voice sentence="Let me taste your mortality!"/>
+	</voices>
+	<loot>
+    <item id="2694" chance="58125" /><!-- bunch of wheat -->
+    <item id="2148" countmax="100" chance="41650" /><!-- gold coin -->
+    <item id="2148" countmax="99" chance="41650" /><!-- gold coin -->
+    <item id="2152" countmax="5" chance="5650" /><!-- platinum coin -->
+    <item id="2260" chance="20325" /><!-- blank rune -->
+    <item id="2260" chance="20325" /><!-- blank rune -->
+    <item id="2550" chance="3300" /><!-- scythe -->
+     <item id="2199" chance="3100" /><!-- garlic necklace -->
+    <item id="1987" chance="100000"><!-- bag -->
+        <inside>
+            <item id="2436" chance="775" /><!-- skull staff -->
+            <item id="2179" chance="875" /><!-- gold ring -->
+            <item id="2173" chance="225" /><!-- amulet of loss -->
+        </inside>
+    </item>
+</loot>
+
+
+
+
+
+
+</monster>

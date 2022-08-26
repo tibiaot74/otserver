@@ -1,0 +1,14 @@
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="Dragon activity near Ankrahmun reported! Beware!" />
+  <announce delay="5000" type="Event" message="Dragons are leading an attack on Ankrahmun!" />
+  <announce delay="60000" type="Event" message="Ankrahmun is under attack!" />
+  <!--Single Spawns-->
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="33073" fromy="32743" fromz="7" tox="33234" toy="32786" toz="7">
+    <monster name="dragon(Raid)" amount="40" />
+  </areaspawn>
+  <areaspawn delay="70000" fromx="33125" fromy="32726" fromz="7" tox="33193" toy="32767" toz="7">
+    <monster name="dragon lord(Raid)" amount="10" />
+  </areaspawn>
+</raid>

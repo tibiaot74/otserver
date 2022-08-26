@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="King Tibianus" script="King Tibianus.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="133" head="20" body="39" legs="45" feet="7" addons="0"/>
+		<parameters>
+<parameter key="idletime" value="30"/>
+<parameter key="message_greet" value="I greet thee, my loyal subject."/>
+<parameter key="message_farewell" value="Good bye, |PLAYERNAME|!"/>
+<parameter key="message_idletimeout" value="Good bye, |PLAYERNAME|!"/>
+	</parameters>
+</npc>

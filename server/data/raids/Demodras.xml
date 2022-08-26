@@ -1,0 +1,9 @@
+<raid>
+  <announce delay="5000" type="Event" message="There's a rumor that Demodras are in plains of havoc." />
+  <!--Area Spawns-->
+  <areaspawn delay="1000" fromx="32769" fromy="32282" fromz="10" tox="32784" toy="32295" toz="10">
+    <monster name="Demodras(raid)" amount="1" />
+	<monster name="Dragon Lord(raid)" amount="2" />
+  </areaspawn>
+</raid>
+

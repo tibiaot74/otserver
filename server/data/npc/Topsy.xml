@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Topsy" script="Xodet.lua" walkinterval="2000" floorchange="0">
+<health now="100" max="100"/>
+<look type="139" head="78" body="52" legs="64" feet="115" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_greet" value="Welcome |PLAYERNAME|! Whats your need?"/>
+		<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+         <parameter key="message_sendtrade" value="Heeeeeeeeeeeeeere. Or loooook only at potions or blank rune?"/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;offer;wands;runes;rods;" />
+        <parameter key="keyword_reply1" value="I am a FRANS." />
+        <parameter key="keyword_reply2" value="I am selliiiing potions or blank rune." />
+        <parameter key="keyword_reply3" value="What do youuuu think I am? A lousy barberrrr? I'm selliiiing potions or blank rune if youuuuu neeeeed." />
+        <parameter key="keyword_reply4" value="life potion, mana potion, blank runes." />
+        <parameter key="keyword_reply5" value="Heeeeeeeeere. Also loooooook all type of blank runes." />
+        <parameter key="keyword_reply6" value="life potion, mana potion, blank runes." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="life fluid,2006,60,10;mana fluid,2006,100,7;blank rune,2260,10;spellbook,2175,150" />
+        <parameter key="shop_sellable" value="vial,2006,5;" />
+    </parameters>
+</npc>

@@ -1,0 +1,21 @@
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="There's a group people north of Ankrahmun, Beware!" />
+  <announce delay="60000" type="Event" message="Ankrahmun is under attack!" />
+  <!--Single Spawns-->
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="33073" fromy="32743" fromz="7" tox="33234" toy="32786" toz="7">
+    <monster name="Smuggler(Raid)" amount="45" />
+	<monster name="Wild Warrior(Raid)" amount="20" />
+  </areaspawn>
+  <areaspawn delay="90000" fromx="33073" fromy="32743" fromz="7" tox="33234" toy="32786" toz="7">
+    <monster name="Smuggler(Raid)" amount="40" />
+    <monster name="Bandit(Raid)" amount="40" />
+	<monster name="Wild Warrior(Raid)" amount="40" />	
+  </areaspawn>
+   <areaspawn delay="100000" fromx="33073" fromy="32743" fromz="7" tox="33234" toy="32786" toz="7">
+    <monster name="Smuggler(Raid)" amount="40" />
+    <monster name="Bandit(Raid)" amount="40" />
+    <monster name="Wild Warrior(Raid)" amount="40" />
+  </areaspawn>
+</raid>

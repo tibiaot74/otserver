@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bozo" script="Bozo.lua" walkinterval="1000" access="3" floorchange="0">
+	<health now="150" max="150"/>
+	<look type="131" head="81" body="77" legs="81" feet="79" addons="3" corpse="2212"/>
+	<parameters>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell mana potion, life potion, blank runes."/>
+		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!"/>
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="life fluid,2006,60,10;mana fluid,2006,100,7;blank rune,2260,10;spellbook,2175,150" />
+        <parameter key="shop_sellable" value="vial,2006,5;" />
+	</parameters>
+</npc>
