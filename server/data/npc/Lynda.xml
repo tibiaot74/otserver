@@ -1,0 +1,7 @@
+
+<npc name="Lynda" script="marriagesystem.lua" walkinterval="2000">
+	<health now="150" max="150"/>
+	<look type="138" head="79" body="82" legs="67" feet="114" corpse="2212"/>
+	<parameters>
+	</parameters>
+</npc>

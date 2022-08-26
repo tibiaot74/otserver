@@ -1,0 +1,15 @@
+<raid>
+<announce delay="1000" type="event" message="Server save in 10 minutes." />
+<announce delay="300000" type="event" message="Server save in 5 minutes." />
+<announce delay="420000" type="event" message="Server save in 3 minutes." />
+<announce delay="480000" type="event" message="Server save in 2 minutes." />
+<announce delay="540000" type="event" message="Server save in one minute." />
+<announce delay="600000" type="event" message="SERVER SAVE! Welcome back in 10 minutes!" />
+
+  <!--Area Spawns-->
+  <areaspawn delay="600000" fromx="32331" fromy="32182" fromz="7" tox="32426" toy="32261" toz="7">
+  </areaspawn>
+ 
+
+
+</raid>

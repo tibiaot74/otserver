@@ -1,0 +1,68 @@
+----- 1/8/2016 16:4:42 - Hole (168.227.50.90) -----
+Comment: 
+Windows Version: 6.1 build 7601 on 2 with Service Pack 1
+Graphic Engine: 1
+Last Packet Types: 109 101 109 101 109 101 109 101 109 030
+Last Packet: 111 000 109 132 126 071 124 007 002 132 126 070 124 007 101 152
+Player Position: [32388,31815,7]
+Player.cpp 383: exception occurred, reason:
+Network.cpp 885: exception occurred (ErrorCode = 0), reason:
+Control.cpp 1280: exception occurred (Type = 109), reason:
+Communication.cpp 1895: exception occurred, reason:
+Communication.cpp 1879: MoveCreature has been received for a coordinate where there is no creature anymore [bug0000017], reason:
+ sx: 8 sy: 6 sz: 0
+ Position: 2
+ zx: 8 zy: 5 zz: 0
+ dx: 0 dy: -1 dz: 0
+ abs_sx: 32388 abs_sy: 31815 abs_sz: 7
+ abs_zx: 32388 abs_zy: 31814 abs_zz: 7
+ Start Cylinder (1):  (408,0) (99,268511980)
+ Start Cylinder (2):  (408,0) (99,268511980)(-)(-)(-)(-)(-)(-)(-)(-)
+ Destination Cylinder (1):  (408,0)
+ Destination Cylinder (2):  (408,0)(-)(-)(-)(-)(-)(-)(-)(-)(-)
+Mon Aug 01 17:04:27 2016
+Debug Assertion 7.72 Communication.cpp 1879
+
+----- 2/8/2016 7:22:46 - Jimmed (191.52.240.202) -----
+Comment: 
+Windows Version: 6.1 build 7601 on 2 with Service Pack 1
+Graphic Engine: 2
+Last Packet Types: 107 107 105 105 105 109 131 140 107 107
+Last Packet: 155 000 105 009 128 144 125 006 056 017 071 011 002 190 016 190
+Player Position: [32780,32143,7]
+Player.cpp 383: exception occurred, reason:
+Network.cpp 885: exception occurred (ErrorCode = 0), reason:
+Control.cpp 1280: exception occurred (Type = 107), reason:
+Communication.cpp 1630: exception occurred (rx = 7) (ry = 6), reason:
+Communication.cpp 1594: assertion failed (rx = 7) (ry = 6), reason:
+FieldRefreshRequested(rx,ry,rz)
+Tue Aug 02 08:18:15 2016
+Debug Assertion 7.72 Communication.cpp 1594
+
+----- 2/8/2016 7:30:51 - Jimmed (191.52.240.202) -----
+Comment: 
+Windows Version: 6.1 build 7601 on 2 with Service Pack 1
+Graphic Engine: 2
+Last Packet Types: 107 105 160 105 109 105 131 140 105 100
+Last Packet: 034 000 105 012 128 145 125 006 057 017 073 011 002 190 016 190
+Player Position: [32780,32143,7]
+Player.cpp 383: exception occurred, reason:
+Network.cpp 885: exception occurred (ErrorCode = 0), reason:
+Control.cpp 1280: exception occurred (Type = 107), reason:
+Communication.cpp 1630: exception occurred (rx = 7) (ry = 7), reason:
+Communication.cpp 1594: assertion failed (rx = 7) (ry = 7), reason:
+FieldRefreshRequested(rx,ry,rz)
+Tue Aug 02 08:26:28 2016
+Debug Assertion 7.72 Communication.cpp 1594
+
+----- 2/8/2016 14:6:24 - Caranervoso (186.235.158.50) -----
+
+Windows Version: 6.1 build 7600 on 2
+Graphic Engine: 2
+Last Packet Types: 000 000 000 000 000 000 000 000 000 000
+Player.cpp 383: exception occurred, reason:
+MainFrm.cpp 466: exception occurred, reason:
+MainFrm.cpp 481: unknown exception occurred
+Tue Aug 02 14:51:24 2016
+Debug Assertion 7.72 MainFrm.cpp 481
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<npc name="Alexander" script="default.lua" walkinterval="2000">
+
+  <health now="200" max="200" />
+  <look type="130" head="96" body="63" legs="71" feet="97" addons="0"/>
+  <parameters>
+  
+  <parameter key="message_greet" value="Hi there |PLAYERNAME|"/>
+  <parameter key="message_farewell" value="See you."/>
+        
+<parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="crystal ball,2192,530;life ring,2168,900;blue spell wand,2190,1600;life fluid,2006,100,10;mana fluid,2006,100,7;blank rune,2260,10;spellbook,2175,150" />
+        <parameter key="shop_sellable" value="vial,2006,5;crystal ball,2192,190;life crystal,2177,85;mind stone,2178,170;" />
+    
+</parameters>
+
+</npc>

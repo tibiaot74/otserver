@@ -1,0 +1,11 @@
+<raid>
+  <!--Announcements-->
+  <announce delay="1000" type="Event" message="Event activity near Thais reported! Beware!" />
+  <announce delay="60000" type="Event" message="Thais is under attack!" />
+  <!--Single Spawns-->
+  <!--Area Spawns-->
+  <areaspawn delay="60000" fromx="32311" fromy="32181" fromz="7" tox="32426" toy="32261" toz="7">
+    <monster name="demon (raid)" amount="80" />
+	 <monster name="demon (evt)" amount="1" />
+  </areaspawn>
+</raid>

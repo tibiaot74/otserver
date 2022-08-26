@@ -1,0 +1,12 @@
+<npc name="Shiriel" script="Xodet.lua" walkinterval="1000" access="3" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="62" head="2" body="103" legs="0" feet="95" addons="0"/>
+<parameters>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I sell mana potion, life potion, blank runes."/>
+		<parameter key="message_decline" value="Is |TOTALCOST| gold coins too much for you? Get out of here!"/>
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="life fluid,2006,60,10;mana fluid,2006,100,7;blank rune,2260,10;spellbook,2175,150" />
+        <parameter key="shop_sellable" value="vial,2006,5;" />
+
+	</parameters>
+</npc>

@@ -1,0 +1,10 @@
+<raid>
+  <!--Area Spawns-->
+  <areaspawn delay="1000" fromx="33277" fromy="31962" fromz="7" tox="3330" toy="32010" toz="7">
+    <monster name="dwarf(raid)" amount="150" />
+	<monster name="dwarf soldier(raid)" amount="40" />
+  </areaspawn>
+ 
+
+
+</raid>

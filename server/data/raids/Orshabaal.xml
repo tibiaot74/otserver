@@ -1,0 +1,14 @@
+<raid>
+  <announce delay="1000" type="Event" message="Orshabaal's minions are working on his return to the World. LEAVE Edron at once, mortals." />
+  <announce delay="60000" type="Event" message="Orshabaal is about to make his way into the mortal realm. Run for your lives!" />
+  <announce delay="125000" type="Event" message="Orshabaal has been summoned from hell to plague the lands of mortals again." />
+  
+  <!--Area Spawns-->
+  <areaspawn delay="120000" fromx="33115" fromy="31697" fromz="7" tox="33121" toy="31703" toz="7">
+    <monster name="Orshabaal(raid)" amount="1" />
+  </areaspawn>
+ 
+
+
+</raid>
+
