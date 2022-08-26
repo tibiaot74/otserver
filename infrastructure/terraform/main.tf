@@ -10,6 +10,12 @@ resource "aws_instance" "this" {
   security_groups             = [aws_security_group.this.id]
   key_name                    = var.ssh_key
   iam_instance_profile        = aws_iam_instance_profile.this.name
+  user_data = <<EOF
+    #!/bin/bash
+    git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git
+    cd otserver-tibia-7.4
+    docker-compose up
+  EOF
 
   ebs_block_device {
     device_name = "EBS_Tibia"
@@ -33,6 +39,12 @@ resource "aws_spot_instance_request" "this" {
   key_name               = var.ssh_key
   vpc_security_group_ids = [aws_security_group.this.id]
   iam_instance_profile   = aws_iam_instance_profile.this.name
+  user_data = <<EOF
+    #!/bin/bash
+    git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git
+    cd otserver-tibia-7.4
+    docker-compose up
+  EOF
 
   root_block_device {
     volume_size = "${var.disk_size_in_GiB}"

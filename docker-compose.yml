@@ -1,0 +1,18 @@
+version: '3'
+services:
+  db:
+    container_name: mysql
+    image: mysql:5.7
+    restart: always
+    network_mode: "host"
+    environment:
+      - MYSQL_ROOT_PASSWORD=1230891247123091278123891230129
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+  server:
+   container_name: server
+   build: .
+   network_mode: "host"
+   depends_on:
+     - db
+   restart: always
