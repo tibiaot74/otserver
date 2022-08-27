@@ -21,12 +21,6 @@ jobs:
           terraform init
           terraform validate
 
-      - name: Initialize packer image
-        uses: hashicorp/packer-github-actions@v0.2.0
-        with:
-          command: init
-          target: infrastructure/packer/server.pkr.hcl
-
       - name: Validate packer image
         uses: hashicorp/packer-github-actions@v0.2.0
         with:
