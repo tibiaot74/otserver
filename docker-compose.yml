@@ -10,9 +10,9 @@ services:
     volumes:
       - ./database:/docker-entrypoint-initdb.d
   server:
-   container_name: server
-   build: .
-   network_mode: "host"
-   depends_on:
-     - db
-   restart: always
+    container_name: server
+    build: .
+    network_mode: "host"
+    depends_on:
+      - db
+    restart: always

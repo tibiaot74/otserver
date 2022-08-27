@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -9,4 +10,47 @@ jobs:
 
     steps:
       - name: Checks-out repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform CLI
+        uses: hashicorp/setup-terraform@v2.0.0
+
+      - name: Validate Terraform
+        working-directory: infrastructure/terraform
+        run: |
+          terraform init
+          terraform validate
+
+      - name: Build docker image of server
+        run: docker build -t server .
+
+      - name: Substitute docker compose build by created image
+        uses: mikefarah/yq@v4.27.2
+        with:
+          cmd: |
+            yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
+            yq -i '.services.server.image = "server"' docker-compose.yml
+
+      - name: Run docker-compose
+        run: docker-compose up -d
+
+      - name: Wait for containers to start
+        run: sleep 45
+
+      - name: Check if containers are running fine
+        id: dockerComposeTesting
+        run: |
+          containers_running=$(docker container ls --filter "status=running" -q | wc -l)
+          if [ $containers_running = 2 ]; then
+            echo "There is/are $containers_running containers running! The expected value is 2."
+            exit 0
+          else
+            echo "There are 2 containers running! You are good to go!"
+            exit 1
+          fi
+      
+      - name: Log docker-compose errors
+        if: teps.dockerComposeTesting.outcome == 'failure'
+        run: docker-compose logs
+
+ 
