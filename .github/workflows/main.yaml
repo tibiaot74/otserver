@@ -50,7 +50,7 @@ jobs:
           fi
       
       - name: Log docker-compose errors
-        if: teps.dockerComposeTesting.outcome == 'failure'
+        if: steps.dockerComposeTesting.outcome == 'failure'
         run: docker-compose logs
 
  
