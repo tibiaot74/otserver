@@ -35,18 +35,16 @@ jobs:
         run: docker-compose up -d
 
       - name: Wait for containers to start
-        run: sleep 45
+        run: sleep 50
 
       - name: Check if containers are running fine
         id: dockerComposeTesting
         run: |
-          containers_running=$(docker container ls --filter "status=running" -q | wc -l)
-          if [ $containers_running = 2 ]; then
-            echo "There is/are $containers_running containers running! The expected value is 2."
-            exit 0
+          docker logs server --tail 2 &> /tmp/server_log.txt
+          if grep -q "server Online!" /tmp/server_log.txt; then
+            echo "ok!"
           else
-            echo "There are 2 containers running! You are good to go!"
-            exit 1
+            echo "xd"
           fi
       
       - name: Log docker-compose errors
