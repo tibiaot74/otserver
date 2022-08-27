@@ -21,13 +21,6 @@ jobs:
           terraform init
           terraform validate
 
-      - name: Validate packer image
-        uses: hashicorp/packer-github-actions@v0.2.0
-        with:
-          command: validate
-          arguments: -syntax-only
-          target: infrastructure/packer/server.pkr.hcl
-      
       - name: Check if packer folder changed to build new AMI
         uses: dorny/paths-filter@v2
         id: changes_on_packer_folder
