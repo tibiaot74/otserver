@@ -37,13 +37,13 @@ jobs:
               - 'infrastructure/packer/**'
 
       - name: Initialize packer image
-        uses: hashicorp/packer-github-actions@vmaster
+        uses: hashicorp/packer-github-actions@master
         with:
           command: init
           target: infrastructure/packer/server.pkr.hcl
 
       - name: Validate packer image
-        uses: hashicorp/packer-github-actions@vmaster
+        uses: hashicorp/packer-github-actions@master
         with:
           command: validate
           arguments: -syntax-only
