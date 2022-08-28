@@ -1,7 +1,16 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt install git -y
+sudo apt install git zip -y
+
+### Install yq
+sudo wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64
+sudo chmod a+x /usr/local/bin/yq
+
+### Install AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 ### Docker Installation
 sudo apt-get install \

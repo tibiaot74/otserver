@@ -12,6 +12,13 @@ jobs:
       - name: Checks-out repository
         uses: actions/checkout@v3
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
       - name: Setup Terraform CLI
         uses: hashicorp/setup-terraform@v2.0.0
 
@@ -29,9 +36,22 @@ jobs:
             src:
               - 'infrastructure/packer/**'
 
+      - name: Initialize packer image
+        uses: hashicorp/packer-github-actions@master
+        with:
+          command: init
+          target: infrastructure/packer/server.pkr.hcl
+
+      - name: Validate packer image
+        uses: hashicorp/packer-github-actions@master
+        with:
+          command: validate
+          arguments: -syntax-only
+          target: infrastructure/packer/server.pkr.hcl
+
       - name: Build packer image
         if: steps.changes_on_packer_folder.outputs.src == 'true'
-        uses: hashicorp/packer-github-actions@v0.2.0
+        uses: hashicorp/packer-github-actions@master
         with:
           command: build
           arguments: "-color=false -on-error=abort"
@@ -67,4 +87,20 @@ jobs:
         if: steps.dockerComposeTesting.outcome == 'failure'
         run: docker-compose logs
 
- 
+      - name: Login to Amazon ECR
+        if: steps.dockerComposeTesting.outcome == 'success'
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push docker image to Amazon ECR
+        if: steps.dockerComposeTesting.outcome == 'success'
+        env:
+          REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          REPOSITORY: otserver
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker-compose down
+          docker image tag server $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          docker image tag server $REGISTRY/$REPOSITORY:latest
+          docker push $REGISTRY/$REPOSITORY:latest
