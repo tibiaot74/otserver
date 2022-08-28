@@ -36,6 +36,19 @@ jobs:
             src:
               - 'infrastructure/packer/**'
 
+      - name: Initialize packer image
+        uses: hashicorp/packer-github-actions@vmaster
+        with:
+          command: init
+          target: infrastructure/packer/server.pkr.hcl
+
+      - name: Validate packer image
+        uses: hashicorp/packer-github-actions@vmaster
+        with:
+          command: validate
+          arguments: -syntax-only
+          target: infrastructure/packer/server.pkr.hcl
+
       - name: Build packer image
         if: steps.changes_on_packer_folder.outputs.src == 'true'
         uses: hashicorp/packer-github-actions@master
