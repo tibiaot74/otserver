@@ -33,7 +33,12 @@ build {
     "amazon-ebs.server"
   ]
 
+  provisioner "file" {
+    source      = "${path.root}/otserver.service"
+    destination = "/tmp/otserver.service"
+  }
+  
   provisioner "shell" {
-    script = "infrastructure/packer/build.sh"
+    script = "${path.root}/build.sh"
   }
 }
