@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -9,4 +10,61 @@ jobs:
 
     steps:
       - name: Checks-out repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
+
+      - name: Setup Terraform CLI
+        uses: hashicorp/setup-terraform@v2.0.0
+
+      - name: Validate Terraform
+        working-directory: infrastructure/terraform
+        run: |
+          terraform init
+          terraform validate
+
+      - name: Check if packer folder changed to build new AMI
+        uses: dorny/paths-filter@v2
+        id: changes_on_packer_folder
+        with:
+          filters: |
+            src:
+              - 'infrastructure/packer/**'
+
+      - name: Build packer image
+        if: steps.changes_on_packer_folder.outputs.src == 'true'
+        uses: hashicorp/packer-github-actions@v0.2.0
+        with:
+          command: build
+          arguments: "-color=false -on-error=abort"
+          target: infrastructure/packer/server.pkr.hcl
+
+      - name: Build docker image of server
+        run: docker build -t server .
+
+      - name: Substitute docker compose build by created image
+        uses: mikefarah/yq@v4.27.2
+        with:
+          cmd: |
+            yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
+            yq -i '.services.server.image = "server"' docker-compose.yml
+
+      - name: Run docker-compose
+        run: docker-compose up -d
+
+      - name: Wait for containers to start
+        run: sleep 50
+
+      - name: Check if containers are running fine
+        id: dockerComposeTesting
+        run: |
+          docker logs server --tail 2 &> /tmp/server_log.txt
+          if grep -q "server Online!" /tmp/server_log.txt; then
+            echo "Server online!"
+          else
+            echo "Something went wrong... Check logs,"
+          fi
+      
+      - name: Log docker-compose errors
+        if: steps.dockerComposeTesting.outcome == 'failure'
+        run: docker-compose logs
+
+ 
