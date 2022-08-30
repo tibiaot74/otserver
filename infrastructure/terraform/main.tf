@@ -44,7 +44,10 @@ resource "aws_spot_instance_request" "this" {
     git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git /root/otserver
     cd /root/otserver
     AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
-    yq -i '.services.server.image = "$AWS_ACCOUNT_ID.dkr.ecr.${var.region}.amazonaws.com/otserver:latest"' docker-compose.yml
+    yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
+    export SERVER_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.${var.region}.amazonaws.com/otserver:latest"
+    yq -i '.services.server.image = env(SERVER_IMAGE)' docker-compose.yml
+    aws ecr get-login-password --region ${var.region} | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.${var.region}.amazonaws.com
     systemctl enable otserver
     systemctl start otserver
   EOF
@@ -139,7 +142,10 @@ resource "aws_iam_role" "this" {
       },
     ]
   })
-  managed_policy_arns = ["arn:aws:iam::aws:policy/AmazonS3FullAccess"]
+  managed_policy_arns = [
+    "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+    "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+  ]
 }
 
 resource "aws_iam_instance_profile" "this" {
