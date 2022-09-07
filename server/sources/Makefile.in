@@ -99,7 +99,7 @@ am__theotxserver_SOURCES_DIST = account.h actions.cpp actions.h \
 	textlogger.h thing.cpp thing.h tile.cpp tile.h tools.cpp \
 	tools.h town.h trashholder.cpp trashholder.h waitlist.cpp \
 	waitlist.h waypoints.h weapons.cpp weapons.h vocation.cpp \
-	vocation.h
+	vocation.h bcrypt.cpp bcrypt.h blowfish.cpp node_blf.h openbsd.h
 @USE_MYSQL_TRUE@am__objects_1 = databasemysql.$(OBJEXT)
 @USE_MYSQLPP_TRUE@am__objects_2 = databasemysqlpp.$(OBJEXT)
 @USE_SQLITE_TRUE@am__objects_3 = databasesqlite.$(OBJEXT)
@@ -332,7 +332,7 @@ theotxserver_SOURCES = account.h actions.cpp actions.h  baseevents.cpp baseevent
 	teleport.h templates.h textlogger.cpp textlogger.h thing.cpp thing.h \
 	tile.cpp tile.h tools.cpp tools.h town.h trashholder.cpp trashholder.h \
 	waitlist.cpp waitlist.h waypoints.h weapons.cpp weapons.h vocation.cpp \
-	vocation.h
+	vocation.h bcrypt.cpp bcrypt.h blowfish.cpp node_blf.h openbsd.h
 
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
