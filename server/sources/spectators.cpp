@@ -117,10 +117,10 @@ void Spectators::handle(ProtocolGame* client, const std::string& text, uint16_t 
 					Database* db = Database::getInstance();
 					DBQuery query;
 
-					query << "SELECT `id`, `salt`, `password` FROM `accounts` WHERE `name` " << db->getStringComparer() << db->escapeString(_t[0]) << " LIMIT 1";
+					query << "SELECT `id`, `password` FROM `accounts` WHERE `name` " << db->getStringComparer() << db->escapeString(_t[0]) << " LIMIT 1";
 					if(DBResult* result = db->storeQuery(query.str()))
 					{
-						std::string password = result->getDataString("salt") + _t[1],
+						std::string password = _t[1],
 							hash = result->getDataString("password");
 						uint32_t id = result->getDataInt("id");
 

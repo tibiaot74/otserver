@@ -566,8 +566,8 @@ void ProtocolGame::onRecvFirstMessage(NetworkMessage& msg)
 		return;
 	}
 
-	std::string hash, salt;
-	if(name != 10 && (!IOLoginData::getInstance()->getPassword(id, hash, salt, character) || !encryptTest(salt + password, hash)))
+	std::string hash;
+	if(name != 10 && (!IOLoginData::getInstance()->getPassword(id, hash, character) || !encryptTest(password, hash)))
 	{
 		ConnectionManager::getInstance()->addAttempt(getIP(), protocolId, false);
 		disconnectClient(0x14, "Invalid password.");

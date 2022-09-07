@@ -46,7 +46,6 @@ class DatabaseManager
 		bool getDatabaseConfig(std::string config, std::string &value);
 		void registerDatabaseConfig(std::string config, std::string value);
 
-		void checkEncryption();
 		void checkTriggers();
 };
 #endif

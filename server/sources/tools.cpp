@@ -15,6 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ////////////////////////////////////////////////////////////////////////
 #include "otpch.h"
+#include "bcrypt.h"
 #include "tools.h"
 
 #include <iostream>
@@ -132,9 +133,7 @@ void _encrypt(std::string& str, bool upperCase)
 
 bool encryptTest(std::string plain, std::string& hash)
 {
-	std::transform(hash.begin(), hash.end(), hash.begin(), upchar);
-	_encrypt(plain, true);
-	return plain == hash;
+	return bcrypt::validatePassword(plain, hash);
 }
 
 bool replaceString(std::string& text, const std::string& key, const std::string& value)
