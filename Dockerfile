@@ -1,4 +1,4 @@
-FROM tibiaot74:latest
+FROM tibiaot74/debian:latest
 WORKDIR server
 COPY server /server
 WORKDIR /server/sources
