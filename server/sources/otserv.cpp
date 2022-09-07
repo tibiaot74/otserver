@@ -653,7 +653,6 @@ ServiceManager* services)
 			startupErrorMessage("The database you have specified in config.lua is empty, please import schemas/<engine>.sql to the database.");
 
 		DatabaseManager::getInstance()->checkTriggers();
-		DatabaseManager::getInstance()->checkEncryption();
 		if(g_config.getBool(ConfigManager::OPTIMIZE_DATABASE) && !DatabaseManager::getInstance()->optimizeTables())
 			std::clog << "> No tables were optimized." << std::endl;
 	}
