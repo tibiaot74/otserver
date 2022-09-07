@@ -341,7 +341,7 @@ uint64_t IOLoginData::createAccount(std::string name, std::string password)
 	Database* db = Database::getInstance();
 	DBQuery query;
 
-	query << "INSERT INTO `accounts` (`id`, `name`, `password`) VALUES (NULL, " << db->escapeString(name) << ", " << db->escapeString(password)")";
+	query << "INSERT INTO `accounts` (`id`, `name`, `password`) VALUES (NULL, " << db->escapeString(name) << ", " << db->escapeString(password) << ")";
 	if(!db->query(query.str()))
 		return 0;
 
