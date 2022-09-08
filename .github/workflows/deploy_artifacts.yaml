@@ -78,11 +78,10 @@ jobs:
             yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
             yq -i '.services.server.image = "server"' docker-compose.yml
 
-      - name: Build, tag, and push docker image to Amazon ECR
+      - name: Build, tag, and push docker image to Docker Hub 
         env:
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker-compose down
           docker image tag server ${{ secrets.DOCKER_USERNAME }}/server:$IMAGE_TAG
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
           docker image tag server $REGISTRY/$REPOSITORY:latest
