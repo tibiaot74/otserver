@@ -13,6 +13,10 @@ resource "aws_instance" "this" {
   user_data                   = <<-EOF
     #!/bin/bash
     git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git /root/otserver
+    cd /root/otserver
+    yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
+    export SERVER_IMAGE="tibiaot74/server:latest"
+    yq -i '.services.server.image = env(SERVER_IMAGE)' docker-compose.yml
     systemctl enable otserver
     systemctl start otserver
   EOF
@@ -43,11 +47,9 @@ resource "aws_spot_instance_request" "this" {
     #!/bin/bash
     git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git /root/otserver
     cd /root/otserver
-    AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
     yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
-    export SERVER_IMAGE="$AWS_ACCOUNT_ID.dkr.ecr.${var.region}.amazonaws.com/otserver:latest"
+    export SERVER_IMAGE="tibiaot74/server:latest"
     yq -i '.services.server.image = env(SERVER_IMAGE)' docker-compose.yml
-    aws ecr get-login-password --region ${var.region} | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.${var.region}.amazonaws.com
     systemctl enable otserver
     systemctl start otserver
   EOF
