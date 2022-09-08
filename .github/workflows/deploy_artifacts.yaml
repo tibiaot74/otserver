@@ -61,7 +61,7 @@ jobs:
       - name: Push base image
         env:
           IMAGE_TAG: ${{ github.sha }}
-        uses: |
+        run: |
           docker image tag ${{ secrets.DOCKER_USERNAME }}/debian ${{ secrets.DOCKER_USERNAME }}/debian:$IMAGE_TAG
           docker push ${{ secrets.DOCKER_USERNAME }}/debian:$IMAGE_TAG
           docker image tag ${{ secrets.DOCKER_USERNAME}}/debian ${{ secrets.DOCKER_USERNAME }}/debian:latest
