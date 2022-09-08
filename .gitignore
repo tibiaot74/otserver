@@ -85,3 +85,6 @@ crash.log
 
 # For built boxes
 *.box
+
+# As per Pão's request
+.vscode

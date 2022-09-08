@@ -49,4 +49,4 @@ theotxserver_SOURCES = account.h actions.cpp actions.h  baseevents.cpp baseevent
 	teleport.h templates.h textlogger.cpp textlogger.h thing.cpp thing.h \
 	tile.cpp tile.h tools.cpp tools.h town.h trashholder.cpp trashholder.h \
 	waitlist.cpp waitlist.h waypoints.h weapons.cpp weapons.h vocation.cpp \
-	vocation.h
+	vocation.h bcrypt.cpp bcrypt.h blowfish.cpp node_blf.h openbsd.h

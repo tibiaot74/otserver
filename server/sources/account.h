@@ -45,7 +45,7 @@ class Account
 
 		uint16_t premiumDays, warnings;
 		uint32_t number, lastDay;
-		std::string name, password, recoveryKey, salt;
+		std::string name, password, recoveryKey;
 		Characters charList;
 };
 #endif

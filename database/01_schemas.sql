@@ -25,7 +25,6 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `guild_points` int(11) NOT NULL DEFAULT '0',
   `guild_points_stats` int(11) NOT NULL DEFAULT '0',
   `password` varchar(255) NOT NULL,
-  `salt` varchar(40) NOT NULL DEFAULT '',
   `premdays` int(11) NOT NULL DEFAULT '0',
   `lastday` int(10) unsigned NOT NULL DEFAULT '0',
   `key` varchar(20) NOT NULL DEFAULT '0',
