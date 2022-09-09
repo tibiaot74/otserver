@@ -12,7 +12,7 @@ resource "aws_instance" "this" {
   iam_instance_profile        = aws_iam_instance_profile.this.name
   user_data                   = <<-EOF
     #!/bin/bash
-    git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git /root/otserver
+    git clone https://github.com/tibiaot74/otserver.git /root/otserver
     cd /root/otserver
     yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
     export SERVER_IMAGE="tibiaot74/server:latest"
@@ -45,7 +45,7 @@ resource "aws_spot_instance_request" "this" {
   iam_instance_profile   = aws_iam_instance_profile.this.name
   user_data              = <<-EOF
     #!/bin/bash
-    git clone https://github.com/felipelaptrin/otserver-tibia-7.4.git /root/otserver
+    git clone https://github.com/tibiaot74/otserver.git /root/otserver
     cd /root/otserver
     yq -i ".services.server.image = .services.server.build | del(.services.server.build)" docker-compose.yml
     export SERVER_IMAGE="tibiaot74/server:latest"
