@@ -13,36 +13,6 @@ jobs:
       - name: Checks-out repository
         uses: actions/checkout@v3
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-region: ${{ secrets.AWS_REGION }}
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-      - name: Check if packer folder changed to build new AMI
-        uses: dorny/paths-filter@v2
-        id: changes_on_packer_folder
-        with:
-          filters: |
-            src:
-              - 'infrastructure/packer/**'
-
-      - name: Initialize packer image
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: init
-          target: infrastructure/packer/server.pkr.hcl
-
-      - name: Build packer image
-        if: steps.changes_on_packer_folder.outputs.src == 'true'
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: build
-          arguments: "-color=false -on-error=abort"
-          target: infrastructure/packer/server.pkr.hcl
-
-      
       - name: Check if base debian image changed
         uses: dorny/paths-filter@v2
         id: changes_on_base_docker_image_file
