@@ -98,7 +98,7 @@ void ProtocolLogin::onRecvFirstMessage(NetworkMessage& msg)
 	setXTEAKey(key);
 	#endif
 	uint32_t name = 123123;
-	std::string name2 = msg.getString();
+	std::string name2 = msg.getString(false, 32);
 	std::string password = msg.getString();
 
 	std::clog << "O nome recebido foi: " << name2 << std::endl;
