@@ -7,8 +7,8 @@ INSERT INTO `accounts` (
      `email_code`, `next_email`, `created`, `page_lastday`, `page_access`, `rlname`,
      `location`, `flag`, `last_post`, `create_date`, `create_ip`, `vote`
 ) VALUES
-(2, '11111111', "admin_fake_email", 0, 0, 0,
- 0, '21298df8a3277357ee55b01df9530b535cf08ec1', 3, 1470516618, '',
+(2, '123123', "admin_fake_email", 0, 0, 0,
+ 0, '$2a$12$lTJvfWuPMpJnp4losLttjunVAs.062xo5.LvH8QxHRGeP4rwkeS16', 3, 1470516618, '',
  0, 0, 2, 0, '', 0,
  '', 0, 0, 0, 0, '',
  '', 'br', 0, 1470516618, 2147483647, 0);
