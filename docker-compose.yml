@@ -16,3 +16,24 @@ services:
     depends_on:
       - db
     restart: always
+  backend:
+    container_name: backend
+    image: tibiaot74/tibia-backend:latest
+    restart: always
+    network_mode: "host"
+    environment:
+      - DB_NAME=ot
+      - DB_HOST=127.0.0.1
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=1230891247123091278123891230129
+      - JWT_KEY=VHfw3zAaBdPCVHfw3zAaBdPCVHfw3zAaBdPC
+    depends_on:
+      - db
+  website:
+    container_name: website
+    image: tibiaot74/frontend-website:latest
+    restart: always
+    network_mode: "host"
+    environment:
+      - REACT_APP_API_URL=http://lipyt.ddns.net:7474
