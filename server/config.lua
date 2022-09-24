@@ -1,13 +1,13 @@
 	-- Owner Data
-	ownerName = "OldServBR"
-	ownerEmail = "mitsuig@xtibia.com"
-	url = "http://www.oldserv.com"
-	location = "Canada"
+	ownerName = "DuroOT"
+	ownerEmail = "contato@duroot.com"
+	url = "http://www.lipyt.ddns.net"
+	location = "Brazil"
 
 	-- Messages
-	motd = "Welcome to the OldServ!"
-	serverName = "OldServ"
-	loginMessage = "Welcome to The OldServ!"
+	motd = "Welcome to the DuroOT!"
+	serverName = "DuroOT"
+	loginMessage = "Welcome to The DuroOT!"
 	displayGamemastersWithOnlineCommand = false
 
 	-- MySql
@@ -56,7 +56,7 @@
 	fragsToRedSkull = 4
 	fragsSecondToRedSkull = 28
 	fragsThirdToRedSkull = 120
-	redSkullLength = 1 * 24 * 60 * 60
+	redSkullLength = 3 * 24 * 60 * 60
 
 	-- Black Skull Config
 	fragsToBlackSkull = 6
@@ -235,7 +235,7 @@
 	-- Map
 	-- NOTE: storeTrash costs more memory, but will perform alot faster cleaning.
 	-- houseDataStorage usage may be found at how-use-internal-functions.log
-	mapAuthor = "Mattyx14"
+	mapAuthor = "DuroOT"
 	randomizeTiles = true
 	houseDataStorage = "binary-tilebased"
 	storeTrash = true
@@ -259,7 +259,7 @@
 	serviceThreads = 1
 	coresUsed = "-1" 
 	startupDatabaseOptimization = true
-	removePremiumOnInit = true
+	removePremiumOnInit = false
 	confirmOutdatedVersion = false
 	skipItemsVersionCheck = false
 
@@ -319,14 +319,14 @@
 
 	-- Rates
 	experienceStages = true
-	rateExperience = 100.0
-	rateExperienceFromPlayers = 0
+	rateExperience = 25.0
+	rateExperienceFromPlayers = 5
 	levelToOfflineTraining = 8
-	rateSkill = 1.5
+	rateSkill = 25
 	rateSkillOffline = 0.5
-	rateMagic = 2.0
+	rateMagic = 10.0
 	rateMagicOffline = 0.5
-	rateLoot = 2.0
+	rateLoot = 3.0
 	rateSpawnMin = 8
 	rateSpawnMax = 10
 	formulaLevel = 5.0
@@ -362,11 +362,11 @@
 	experienceShareActivity = 2 * 60 * 1000
 
 	-- Global save
-	globalSaveEnabled = false
-	globalSaveHour = 8
+	globalSaveEnabled = true
+	globalSaveHour = 6
 	globalSaveMinute = 0
-	shutdownAtGlobalSave = true
-	cleanMapAtGlobalSave = false
+	shutdownAtGlobalSave = false
+	cleanMapAtGlobalSave = true
 
 	-- Spawns
 	minRateSpawn = 1

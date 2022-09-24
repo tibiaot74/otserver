@@ -1,0 +1,6 @@
+database:
+  gms:
+    - account_id: 123123
+      password: "god"
+      email: example_email@gmail.com
+      name: Lipe
